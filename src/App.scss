@@ -1,0 +1,103 @@
+$FONT: "Segoe UI";
+
+// html,
+// body {
+//   height: 100%;
+//   width: 100%;
+//   overflow: auto;
+// }
+
+.App {
+  font-family: $FONT;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.navbar {
+  // box-sizing: border-box;
+  height: 60px;
+  // width: 100vw;
+  display: flex;
+  align-items: center;
+  padding: 10 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: rgb(125, 177, 255);
+  justify-content: space-between;
+
+  .navbar__links {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 3px 10px 3px 10px;
+    margin: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    transition: all 0.1s linear;
+    &:hover {
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  .active_link {
+    background: #fff;
+    border-radius: 20px;
+    color: rgb(125, 177, 255);
+    &:hover {
+      background: rgb(239, 242, 255);
+    }
+  }
+  .Sign_in {
+    border: 3px solid white;
+    border-radius: 20px;
+    &:hover {
+      background: rgb(239, 242, 255);
+    }
+  }
+}
+
+.projects {
+  margin: 20px;
+
+  .ul_projects {
+    display: flex;
+    justify-content: center;
+    // justify-items: center;
+    // align-content: center;
+    flex-direction: column;
+
+    .projects_links_btns {
+      list-style-type: none;
+      background: rgb(106, 131, 255);
+      padding: 18px 25px;
+      margin: 10px auto auto auto;
+      border-radius: 20px;
+      font-weight: 500;
+      outline: none;
+      font-size: 22px;
+      cursor: pointer;
+      line-height: 23px;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+      transition: all 0.1s ease-in-out;
+      text-align: center;
+      width: 200px;
+      color: #fff;
+
+      &:hover {
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+        transform: translateY(-1px);
+      }
+
+      &:active {
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        transform: translateY(0);
+      }
+    }
+  }
+}

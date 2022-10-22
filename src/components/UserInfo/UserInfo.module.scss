@@ -1,0 +1,38 @@
+$blue: #4361ee;
+
+.root {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  margin-right: 10px;
+}
+
+.userName {
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  .link {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.additional {
+  font-size: 12px;
+  opacity: 0.6;
+}

@@ -11,7 +11,8 @@ $blue: #4361ee;
   position: relative;
 
   &:hover {
-    border: 1px solid #fff;
+    border: 2px solid #fff;
+
     box-shadow: 0 0 0 1px $blue;
 
     .editButtons {
@@ -22,8 +23,8 @@ $blue: #4361ee;
   &Full {
     &:hover {
       // background-color: #fff;
-      border: 1px solid #dedede;
-      box-shadow: none;
+      // border: 1px solid #dedede;
+      // box-shadow: none;
     }
   }
 }

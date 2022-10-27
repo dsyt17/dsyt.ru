@@ -1,30 +1,57 @@
 $FONT: "Segoe UI";
 
-// html,
-// body {
-//   height: 100%;
-//   width: 100%;
-//   overflow: auto;
-// }
-
 .App {
   font-family: $FONT;
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  background-color: rgb(44, 44, 44);
+  color: #fff;
+}
+
+@keyframes signIn {
+  from {
+    background-color: rgb(81, 81, 81);
+    // background: linear-gradient(
+    //   90deg,
+    //   rgba(81, 81, 81, 1) 0%,
+    //   rgba(133, 133, 133, 1) 100%
+    // );
+  }
+  50% {
+    background-color: rgb(133, 133, 133);
+    // background: linear-gradient(
+    //   90deg,
+    //   rgba(133, 133, 133, 1) 0%,
+    //   rgba(81, 81, 81, 1) 100%
+    // );
+  }
+  to {
+    // background: linear-gradient(
+    //   90deg,
+    //   rgba(81, 81, 81, 1) 0%,
+    //   rgba(133, 133, 133, 1) 100%
+    // );
+    background-color: rgb(81, 81, 81);
+  }
 }
 
 .navbar {
-  // box-sizing: border-box;
   height: 60px;
-  // width: 100vw;
   display: flex;
+  box-sizing: border-box;
   align-items: center;
-  padding: 10 0px;
   padding-left: 10px;
   padding-right: 10px;
-  background: rgb(125, 177, 255);
+  // background: rgb(125, 177, 255);
+  background-color: rgb(13, 13, 13);
   justify-content: space-between;
+  border-bottom: 2px solid rgb(81, 81, 81);
+
+  .all_links {
+    margin: 0;
+    padding: 0;
+  }
 
   .navbar__links {
     display: inline-block;
@@ -32,12 +59,17 @@ $FONT: "Segoe UI";
     padding: 3px 10px 3px 10px;
     margin: 5px;
     text-decoration: none;
-    color: #fff;
+    // color: #fff;
+    color: rgb(81, 81, 81);
     font-size: 20px;
     font-weight: 500;
-    transition: all 0.1s linear;
+
     &:hover {
-      transform: translateY(-1px);
+      // transform: translateY(-1px);
+      background-color: rgb(81, 81, 81);
+      border-radius: 7px;
+      color: #fff;
+      transition: background-color 0.2s linear;
     }
 
     &:active {
@@ -46,18 +78,24 @@ $FONT: "Segoe UI";
   }
 
   .active_link {
-    background: #fff;
-    border-radius: 20px;
-    color: rgb(125, 177, 255);
-    &:hover {
-      background: rgb(239, 242, 255);
-    }
+    // background: #fff;
+    // border-radius: 20px;
+    // color: rgb(125, 177, 255);
+    // &:hover {
+    //   background: rgb(239, 242, 255);
+    // }
+    color: #fff;
+    border-bottom: 2px solid rgb(255, 255, 255);
   }
   .Sign_in {
-    border: 3px solid white;
-    border-radius: 20px;
+    background-color: rgb(81, 81, 81);
+    border-radius: 7px;
+    color: #fff;
+    transition: background-color 0.2s linear;
+    animation: signIn 3s linear infinite;
     &:hover {
-      background: rgb(239, 242, 255);
+      background: rgb(133, 133, 133);
+      animation-play-state: paused;
     }
   }
 }
@@ -68,8 +106,6 @@ $FONT: "Segoe UI";
   .ul_projects {
     display: flex;
     justify-content: center;
-    // justify-items: center;
-    // align-content: center;
     flex-direction: column;
 
     .projects_links_btns {

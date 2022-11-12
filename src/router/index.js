@@ -5,7 +5,7 @@ import Login from "../pages/Login/Login";
 import Profile from "../pages/Profile/Profile";
 import AddPost from "../pages/AddPost/AddPost";
 import FullPost from "../pages/FullPost/FullPost";
-import Projects from "../pages/Projects";
+import Projects from "../pages/Projects/Projects";
 import Photos from "../pages/Projects/Photos/Photos";
 import Converter from "../pages/Projects/Converter/Converter";
 import Users from "../pages/Projects/Users/Users.js";

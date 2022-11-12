@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { logout, selectIsAuth } from "../../../redux/slices/auth";
 import { useDispatch, useSelector } from "react-redux";
+import styles from "./Navbar.module.scss";
 
 const links = {
   main: [
@@ -41,54 +42,44 @@ const Navbar = () => {
   }, [active]);
 
   return (
-    <div className="navbar">
-      <div>
+    <nav className={styles.navbar}>
+      <ul>
         {links.main.map((l, index) => (
-          <Link
-            key={index}
-            className={`navbar__links ${active === index ? "active_link" : ""}`}
-            onClick={() => setActive(index)}
-            to={`/${l.link}`}
-          >
-            {l.name}
-          </Link>
-        ))}
-      </div>
-      <div>
-        {isAuth ? (
-          <div>
+          <li className={active === index ? styles.active_link : ""}>
             <Link
-              className={`navbar__links`}
+              key={index}
+              onClick={() => setActive(index)}
+              to={`/${l.link}`}
+            >
+              {l.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+      <ul>
+        {isAuth ? (
+          <li>
+            <Link
               onClick={() => setActive(3)}
               to={`/users/${userData.nickname}`}
             >
               {userData.nickname}
             </Link>
-            <Link
-              className={`navbar__links`}
-              onClick={logoutButton}
-              to={`exit`}
-            >
+            <Link onClick={logoutButton} to={`exit`}>
               {"Exit"}
             </Link>
-          </div>
+          </li>
         ) : (
           links.guest.map((l, index) => (
-            <Link
-              key={index}
-              className={`navbar__links ${
-                l.name === "Sign in" ? "Sign_in" : ""
-              }`}
-              onClick={() => setActive(0)}
-              to={`/${l.link}`}
-            >
-              {l.name}
-            </Link>
+            <li className={l.name === "Sign in" ? styles.sign_in : ""}>
+              <Link key={index} onClick={() => setActive(0)} to={`/${l.link}`}>
+                {l.name}
+              </Link>
+            </li>
           ))
         )}
-        {}
-      </div>
-    </div>
+      </ul>
+    </nav>
   );
 };
 

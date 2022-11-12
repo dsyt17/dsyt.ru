@@ -1,0 +1,61 @@
+$BG_COLOR: rgb(13, 13, 13);
+$BORDER_TEXT: rgb(81, 81, 81);
+
+.navbar {
+  background-color: $BG_COLOR;
+  border-bottom: 3px solid $BORDER_TEXT;
+  display: flex;
+  justify-content: space-between;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+}
+
+// .navbar ul:last-child {
+//   margin-right: 10px;
+// }
+
+.navbar ul li {
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  transition: background-color 0.1s linear;
+
+  &:hover {
+    background-color: rgb(47, 47, 47);
+    a {
+      color: #fff;
+    }
+  }
+}
+
+.navbar ul li:last-child {
+  margin-right: 0px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: $BORDER_TEXT;
+  font-size: 1.3rem;
+}
+
+.active_link {
+  border-bottom: 3px solid aliceblue;
+  margin-bottom: -3px;
+
+  a {
+    color: #fff !important;
+  }
+}
+
+.sign_in {
+  color: #fff;
+  &:hover {
+    background: rgb(133, 133, 133);
+    animation-play-state: paused;
+  }
+}

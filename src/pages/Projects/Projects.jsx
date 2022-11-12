@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import styles from "./Projects.module.scss";
 
 const projects = [
   { name: "Photos" },
@@ -13,13 +14,13 @@ const Projects = () => {
   const router = useNavigate();
 
   return (
-    <div className="projects">
+    <div className={styles.projects}>
       <h1>This is my projects!</h1>
-      <ul className="ul_projects">
+      <ul className={styles.ul_projects}>
         {projects.map((obj, index) => (
           <li
             key={index}
-            className="projects_links_btns"
+            className={styles.projects_links_btns}
             onClick={() => router(`/projects/${obj.name.toLowerCase()}`)}
           >
             {obj.name}

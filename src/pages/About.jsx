@@ -1,7 +1,9 @@
 import React from "react";
+import useDocumentTitle from "../hooks/setDocumentTitle";
 
 const About = () => {
-  return <h1>This is my study site!</h1>;
+  useDocumentTitle("About");
+  return <h1>_=This is Igor Goncharov site=_</h1>;
 };
 
 export default About;

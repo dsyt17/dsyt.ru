@@ -16,7 +16,7 @@ export const UserInfo = ({
     <div className={styles.root}>
       <img
         className={styles.avatar}
-        src={avatarUrl || "/noavatar.png"}
+        src={avatarUrl ? avatarUrl : "/users_assets/no_avatar.jpg"}
         alt={nickname}
       />
       <div className={styles.userDetails}>
@@ -24,7 +24,9 @@ export const UserInfo = ({
           <Link className={styles.link} to={`/users/${nickname}`}>
             {nickname}
           </Link>
-          {verifed && <VerifiedIcon color="primary" />}
+          {verifed && (
+            <VerifiedIcon style={{ marginLeft: 2 }} color="primary" />
+          )}
         </span>
         <span className={styles.additional}>{additionalText}</span>
       </div>

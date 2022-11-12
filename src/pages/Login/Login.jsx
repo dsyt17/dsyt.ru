@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { fetchAuth, selectIsAuth } from "../../redux/slices/auth";
+import useDocumentTitle from "../../hooks/setDocumentTitle";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -27,9 +28,11 @@ const Login = () => {
     mode: "onChange",
   });
 
+  useDocumentTitle("Login");
+
   // переадрисовываем если уже авторизирован
   if (isAuth) {
-    return <Navigate to="/" />;
+    return <Navigate to="/posts" />;
   }
 
   // выполнится только если все заполнено верно

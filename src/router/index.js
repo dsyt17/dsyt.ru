@@ -12,6 +12,7 @@ import Users from "../pages/Projects/Users/Users.js";
 import Quiz from "../pages/Projects/Quiz/Quiz";
 import Modal from "../pages/Projects/Modal/Modal";
 import { Navigate } from "react-router-dom";
+import ErrorComponent from "../components/ErrorComponent/ErrorComponent";
 
 export const routes = [
   { path: "/about", element: <About /> },
@@ -28,5 +29,7 @@ export const routes = [
   { path: "/projects/users", element: <Users /> },
   { path: "/projects/quiz", element: <Quiz /> },
   { path: "/projects/modal", element: <Modal /> },
-  { path: "/*", element: <Navigate to="/about" replace /> },
+  { path: "/*", element: <ErrorComponent /> },
+  { path: "/", element: <Posts /> },
+  // { path: "/*", element: <Navigate to="/about" replace /> },
 ];

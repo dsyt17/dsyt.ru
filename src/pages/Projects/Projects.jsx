@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import useDocumentTitle from "../../hooks/setDocumentTitle";
 import styles from "./Projects.module.scss";
 
 const projects = [
@@ -12,6 +13,7 @@ const projects = [
 
 const Projects = () => {
   const router = useNavigate();
+  useDocumentTitle("Projects");
 
   return (
     <div className={styles.projects}>

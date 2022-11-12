@@ -14,14 +14,10 @@ const links = {
     { name: "Sign in", link: "login" },
     { name: "Sign up", link: "register" },
   ],
-  auth: [
-    { name: "My profile", link: "profile" },
-    { name: "Exit", link: "/" },
-  ],
 };
 
 const Navbar = () => {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(2);
   const dispatch = useDispatch();
   const isAuth = useSelector(selectIsAuth);
   const userData = useSelector((state) => state.auth.data);
@@ -29,7 +25,7 @@ const Navbar = () => {
   const logoutButton = () => {
     dispatch(logout());
     window.localStorage.removeItem("token");
-    setActive(0);
+    setActive(2);
   };
 
   // кринж убрать
@@ -37,7 +33,7 @@ const Navbar = () => {
     links.main.forEach((l, index) => {
       window.location.pathname.includes(l.link) && setActive(index);
       window.location.pathname.includes("newpost") && setActive(2);
-      window.location.pathname.includes("users") && setActive(2);
+      window.location.pathname.includes("users") && setActive(3);
     });
   }, [active]);
 
@@ -45,12 +41,11 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <ul>
         {links.main.map((l, index) => (
-          <li className={active === index ? styles.active_link : ""}>
-            <Link
-              key={index}
-              onClick={() => setActive(index)}
-              to={`/${l.link}`}
-            >
+          <li
+            key={index}
+            className={active === index ? styles.active_link : undefined}
+          >
+            <Link onClick={() => setActive(index)} to={`/${l.link}`}>
               {l.name}
             </Link>
           </li>
@@ -58,21 +53,25 @@ const Navbar = () => {
       </ul>
       <ul>
         {isAuth ? (
-          <li>
-            <Link
-              onClick={() => setActive(3)}
-              to={`/users/${userData.nickname}`}
-            >
-              {userData.nickname}
-            </Link>
-            <Link onClick={logoutButton} to={`exit`}>
-              {"Exit"}
-            </Link>
-          </li>
+          <>
+            <li className={active === 3 ? styles.active_link : undefined}>
+              <Link
+                onClick={() => setActive(99)}
+                to={`/users/${userData.nickname}`}
+              >
+                {userData.nickname}
+              </Link>
+            </li>
+            <li>
+              <Link onClick={logoutButton} to={`/posts`}>
+                Log Out
+              </Link>
+            </li>
+          </>
         ) : (
           links.guest.map((l, index) => (
-            <li className={l.name === "Sign in" ? styles.sign_in : ""}>
-              <Link key={index} onClick={() => setActive(0)} to={`/${l.link}`}>
+            <li key={index}>
+              <Link onClick={() => setActive(99)} to={`/${l.link}`}>
                 {l.name}
               </Link>
             </li>

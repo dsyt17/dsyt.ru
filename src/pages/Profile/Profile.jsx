@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "./Profile.module.scss";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import { getDate } from "../../utils/dateTime";
-
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import useDocumentTitle from "../../hooks/setDocumentTitle";
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -32,19 +32,28 @@ const Profile = () => {
     // eslint-disable-next-line
   }, []);
 
+  useDocumentTitle(nickname.id);
+
   return isMyDataLoading ? (
+    // add skeleton
     <div></div>
   ) : myData.data && myData.data.nickname === nickname.id ? (
     <div className={styles.root}>
       <img
         className={styles.avatar}
-        src={myData.data.avatarUrl}
+        src={
+          myData.data.avatarUrl
+            ? myData.data.avatarUrl
+            : "/users_assets/no_avatar.jpg"
+        }
         alt={"avavatr"}
       ></img>
 
       <h1>
         <div className={styles.userName}>{myData.data.nickname}</div>
-        {myData.data.verifed && <VerifiedIcon color="primary" />}
+        {myData.data.verifed && (
+          <VerifiedIcon style={{ marginLeft: 5 }} color="primary" />
+        )}
       </h1>
 
       <div>Email: {myData.data.email}</div>
@@ -58,13 +67,19 @@ const Profile = () => {
     <div className={styles.root}>
       <img
         className={styles.avatar}
-        src={userData.data.avatarUrl}
+        src={
+          userData.data.avatarUrl
+            ? userData.data.avatarUrl
+            : "/users_assets/no_avatar.jpg"
+        }
         alt={"avavatr"}
       ></img>
 
       <h1>
         <div className={styles.userName}>{userData.data.nickname}</div>
-        {userData.data.verifed && <VerifiedIcon color="primary" />}
+        {userData.data.verifed && (
+          <VerifiedIcon style={{ marginLeft: 5 }} color="primary" />
+        )}
       </h1>
       <div>Full name: {userData.data.fullName}</div>
       <div>Register: {getDate(userData.data.createdAt)}</div>

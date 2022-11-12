@@ -52,7 +52,7 @@ export const Post = ({
           </IconButton>
         </div>
       )}
-      {imageUrl !== "0" && (
+      {imageUrl !== "0" && imageUrl && (
         <img
           className={clsx(styles.image, { [styles.imageFull]: isFullPost })}
           src={`${baseURL}${imageUrl}`}

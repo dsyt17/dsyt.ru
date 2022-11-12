@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import { fetchRegister, selectIsAuth } from "../../redux/slices/auth";
 
 import styles from "./Login.module.scss";
+import useDocumentTitle from "../../hooks/setDocumentTitle";
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -32,9 +33,11 @@ const Register = () => {
     mode: "onChange",
   });
 
+  useDocumentTitle("Register");
+
   // переадрисовываем если уже авторизирован
   if (isAuth) {
-    return <Navigate to="/" />;
+    return <Navigate to="/posts" />;
   }
 
   // выполнится только если все заполнено верно

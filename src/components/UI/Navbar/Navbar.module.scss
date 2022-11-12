@@ -51,11 +51,3 @@ $BORDER_TEXT: rgb(81, 81, 81);
     color: #fff !important;
   }
 }
-
-.sign_in {
-  color: #fff;
-  &:hover {
-    background: rgb(133, 133, 133);
-    animation-play-state: paused;
-  }
-}

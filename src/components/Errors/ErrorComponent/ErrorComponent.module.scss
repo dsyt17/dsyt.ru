@@ -12,3 +12,12 @@
     font-size: 2rem;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .root h1 {
+    font-size: 2.5rem;
+  }
+  .root p {
+    font-size: 1.5rem;
+  }
+}

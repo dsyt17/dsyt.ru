@@ -1,7 +1,7 @@
 import "./App.scss";
 import { useDispatch, useSelector } from "react-redux";
 import AppRouter from "./components/AppRouter";
-import Navbar from "./components/UI/Navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import React from "react";
 import { fetchAuthMe, selectIsAuth } from "./redux/slices/auth";
 

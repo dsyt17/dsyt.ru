@@ -1,34 +1,68 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import Project from "../../components/Project/Project";
 import useDocumentTitle from "../../hooks/setDocumentTitle";
 import styles from "./Projects.module.scss";
 
 const projects = [
-  { name: "Photos" },
-  { name: "Converter" },
-  { name: "Users" },
-  { name: "Quiz" },
-  { name: "Modal" },
+  {
+    name: "Photos",
+    tech: "React",
+    description: "lorem lorem lorem lorem lorem lorem",
+  },
+  {
+    name: "Converter",
+    tech: "React",
+    description: "lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+  },
+  {
+    name: "Users",
+    tech: "React",
+    description:
+      "lorem lorem lorem lorem lorem loremlore mloremloremlorem loremlor",
+  },
+  {
+    name: "Quiz",
+    tech: "React",
+    description:
+      "lorem lorem lorem lorem lorem lorem lorem loremlor emlore loremlo",
+  },
+  {
+    name: "Modal",
+    tech: "React",
+    description: "lorem lorem lorem lorem lorem lorem lorem",
+  },
 ];
 
 const Projects = () => {
-  const router = useNavigate();
   useDocumentTitle("Projects");
 
   return (
-    <div className={styles.projects}>
+    // <div className={styles.projects}>
+    //   <h1>This is my projects!</h1>
+    //   <ul className={styles.ul_projects}>
+    //     {projects.map((obj, index) => (
+    //       <li
+    //         key={index}
+    //         className={styles.projects_links_btns}
+    //         onClick={() => router(`/projects/${obj.name.toLowerCase()}`)}
+    //       >
+    //         {obj.name}
+    //       </li>
+    //     ))}
+    //   </ul>
+    // </div>
+    <div className={styles.root}>
       <h1>This is my projects!</h1>
-      <ul className={styles.ul_projects}>
+      <div className={styles.projects}>
         {projects.map((obj, index) => (
-          <li
+          <Project
+            name={obj.name}
+            tech={obj.tech}
+            description={obj.description}
             key={index}
-            className={styles.projects_links_btns}
-            onClick={() => router(`/projects/${obj.name.toLowerCase()}`)}
-          >
-            {obj.name}
-          </li>
+          ></Project>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

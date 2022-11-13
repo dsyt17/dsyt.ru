@@ -5,6 +5,7 @@ import { Post } from "../../components/Post";
 import styles from "./Posts.module.scss";
 import { useEffect, useState } from "react";
 import useDocumentTitle from "../../hooks/setDocumentTitle";
+import LoadingPostError from "../../components/Errors/LoadingPostError/LoadingPostError";
 
 const Posts = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,8 @@ const Posts = () => {
 
   const myposts = () =>
     myPosts === true ? setMyPosts(false) : setMyPosts(true);
+
+  const loadingError = posts.status === "error";
 
   // НЕОБХОДИМО ИЗБАВИТЬСЯ ОТ ЭТОГО КРИНЖА ВНИЗУ!!!
   return (
@@ -70,6 +73,8 @@ const Posts = () => {
                 />
               )
           )}
+      {/* если посты не загрузились */}
+      {loadingError && <LoadingPostError />}
     </div>
   );
 };

@@ -37,20 +37,6 @@ const Projects = () => {
   useDocumentTitle("Projects");
 
   return (
-    // <div className={styles.projects}>
-    //   <h1>This is my projects!</h1>
-    //   <ul className={styles.ul_projects}>
-    //     {projects.map((obj, index) => (
-    //       <li
-    //         key={index}
-    //         className={styles.projects_links_btns}
-    //         onClick={() => router(`/projects/${obj.name.toLowerCase()}`)}
-    //       >
-    //         {obj.name}
-    //       </li>
-    //     ))}
-    //   </ul>
-    // </div>
     <div className={styles.root}>
       <h1>This is my projects!</h1>
       <div className={styles.projects}>

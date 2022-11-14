@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { logout, selectIsAuth } from "../../redux/slices/auth";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./Navbar.module.scss";
+import { useNavigate } from "react-router-dom";
 
 const links = {
   main: [
@@ -37,48 +37,89 @@ const Navbar = () => {
     });
   }, [active]);
 
+  const navigate = useNavigate();
+
+  const navToggle = () => {
+    const navBar = document.querySelector("#primary_nav");
+    const navToggle = document.querySelector("#navToggle");
+    const visability = navBar.getAttribute("data-visible");
+
+    if (visability === "false") {
+      navBar.setAttribute("data-visible", true);
+      navToggle.setAttribute("aria-expanded", true);
+    } else {
+      navBar.setAttribute("data-visible", false);
+      navToggle.setAttribute("aria-expanded", false);
+    }
+  };
+
   return (
-    <nav className={styles.navbar}>
-      <ul>
-        {links.main.map((l, index) => (
-          <li
-            key={index}
-            className={active === index ? styles.active_link : undefined}
-          >
-            <Link onClick={() => setActive(index)} to={`/${l.link}`}>
+    <>
+      <button
+        className={styles.mobile_nav_toggle}
+        id="navToggle"
+        aria-controls="primary-nav"
+        aria-expanded="false"
+        onClick={navToggle}
+      >
+        <span className={styles.sr_only}></span>
+      </button>
+      <nav className={styles.navbar} data-visible="false" id="primary_nav">
+        <ul>
+          {links.main.map((l, index) => (
+            <li
+              key={index}
+              className={active === index ? styles.active_link : undefined}
+              onClick={() => {
+                setActive(index);
+                navigate(`/${l.link}`);
+                navToggle();
+              }}
+            >
               {l.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <ul>
-        {isAuth ? (
-          <>
-            <li className={active === 3 ? styles.active_link : undefined}>
-              <Link
-                onClick={() => setActive(99)}
-                to={`/users/${userData.nickname}`}
+            </li>
+          ))}
+        </ul>
+        <ul>
+          {isAuth ? (
+            <>
+              <li
+                className={active === 3 ? styles.active_link : undefined}
+                onClick={() => {
+                  setActive(99);
+                  navigate(`/users/${userData.nickname}`);
+                  navToggle();
+                }}
               >
                 {userData.nickname}
-              </Link>
-            </li>
-            <li>
-              <Link onClick={logoutButton} to={`/posts`}>
+              </li>
+              <li
+                onClick={() => {
+                  logoutButton();
+                  navigate(`/posts`);
+                  navToggle();
+                }}
+              >
                 Log Out
-              </Link>
-            </li>
-          </>
-        ) : (
-          links.guest.map((l, index) => (
-            <li key={index}>
-              <Link onClick={() => setActive(99)} to={`/${l.link}`}>
+              </li>
+            </>
+          ) : (
+            links.guest.map((l, index) => (
+              <li
+                key={index}
+                onClick={() => {
+                  setActive(99);
+                  navigate(`/${l.link}`);
+                  navToggle();
+                }}
+              >
                 {l.name}
-              </Link>
-            </li>
-          ))
-        )}
-      </ul>
-    </nav>
+              </li>
+            ))
+          )}
+        </ul>
+      </nav>
+    </>
   );
 };
 

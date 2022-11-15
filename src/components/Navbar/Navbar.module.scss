@@ -51,24 +51,36 @@ $BORDER_TEXT: rgb(81, 81, 81);
 }
 
 @media (max-width: 600px) {
-  .navbar {
+  .navbar[data-visible="false"] {
+    height: 47px;
+    position: static;
+    flex-direction: row;
+    transform: translateX(0%);
+    padding: 0;
+    background-color: $BG_COLOR;
+    border-left: none;
+    border-bottom: 3px solid $BORDER_TEXT;
+    transition: transform 350ms ease-out;
+
+    ul {
+      display: none;
+    }
+  }
+
+  .navbar[data-visible="true"] {
     position: fixed;
     inset: 0 0 0 30%;
     z-index: 2;
     flex-direction: column;
     justify-content: center;
-    border: none;
+    border-bottom: none;
+    border-left: 3px solid $BORDER_TEXT;
     padding: min(30vh, 10rem) 2em;
-    transform: translateX(100%);
+    transform: translateX(0%);
     transition: transform 350ms ease-out;
-
     ul {
       flex-direction: column;
     }
-  }
-
-  .navbar[data-visible="true"] {
-    transform: translateX(0%);
   }
 
   .mobile_nav_toggle {
@@ -80,7 +92,7 @@ $BORDER_TEXT: rgb(81, 81, 81);
     background-size: cover;
     width: 2rem;
     aspect-ratio: 1;
-    top: 1.7rem;
+    top: 0.5rem;
     right: 0.6rem;
     z-index: 3;
     border: none;
@@ -88,7 +100,6 @@ $BORDER_TEXT: rgb(81, 81, 81);
 
   .mobile_nav_toggle[aria-expanded="true"] {
     position: fixed;
-
     background-image: url("../../../public/users_assets/close.png");
   }
 }

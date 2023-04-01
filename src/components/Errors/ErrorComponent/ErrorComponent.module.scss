@@ -1,23 +1,23 @@
 .root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
 
-  h1 {
-    font-size: 5rem;
-  }
-  p {
-    font-size: 2rem;
-  }
+    h1 {
+        font-size: 5rem;
+    }
+    p {
+        font-size: 2rem;
+    }
 }
 
 @media screen and (max-width: 700px) {
-  .root h1 {
-    font-size: 2.5rem;
-  }
-  .root p {
-    font-size: 1.5rem;
-  }
+    .root h1 {
+        font-size: 2.5rem;
+    }
+    .root p {
+        font-size: 1.5rem;
+    }
 }

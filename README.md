@@ -1,1 +1,1 @@
-#Frontend сайта dsyt.ru
+# dsyt.ru

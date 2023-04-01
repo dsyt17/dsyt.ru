@@ -36,7 +36,7 @@ const Projects = () => {
 
     return (
         <div className={styles.root}>
-            <h1>This is my projects!</h1>
+            <h1>Нищие проекты</h1>
             <div className={styles.projects}>
                 {projects.map((obj, index) => (
                     <Project

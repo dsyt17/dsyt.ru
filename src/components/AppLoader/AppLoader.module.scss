@@ -1,0 +1,23 @@
+@import '../../App';
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-family: $FONT;
+    font-weight: 700;
+    color: aliceblue;
+    background-color: $MAIN_BG_COLOR;
+}
+
+.loader {
+    height: 100px;
+    text-align: center;
+    display: inline-block;
+    svg path,
+    svg rect {
+        fill: aliceblue;
+    }
+}

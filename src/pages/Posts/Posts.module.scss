@@ -1,75 +1,75 @@
 .root {
-  margin: 0 700px 0 700px;
+    margin: 0 700px 0 700px;
 }
 
 @media screen and (max-width: 2200px) {
-  .root {
-    margin: 0 500px 0 500px;
-  }
+    .root {
+        margin: 0 500px 0 500px;
+    }
 }
 
 @media screen and (max-width: 1700px) {
-  .root {
-    margin: 0 300px 0 300px;
-  }
+    .root {
+        margin: 0 300px 0 300px;
+    }
 }
 
 @media screen and (max-width: 1200px) {
-  .root {
-    margin: 0 100px 0px 100px;
-  }
+    .root {
+        margin: 0 100px 0px 100px;
+    }
 }
 
 @media screen and (max-width: 850px) {
-  .root {
-    margin: 0 10px 0px 10px;
-  }
+    .root {
+        margin: 0 10px 0px 10px;
+    }
 }
 
 .buttons {
-  height: 60px;
-  display: flex;
-  margin: 0 0 10px 0;
-  padding-top: 10px;
-  align-items: center;
-  justify-content: right;
-  transition: height 0.3s linear;
-
-  @media (max-width: 600px) {
-    justify-content: left;
-  }
-
-  .button {
-    display: inline-block;
-    vertical-align: middle;
-    text-decoration: none;
-    padding: 10px;
-    background-color: rgb(13, 13, 13);
-    border: 2px solid rgb(81, 81, 81);
-    border-radius: 5px;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 500;
-    transition: all 0.1s linear;
-    margin-left: 15px;
+    height: 60px;
+    display: flex;
+    margin: 0 0 10px 0;
+    padding-top: 10px;
+    align-items: center;
+    justify-content: right;
+    transition: height 0.3s linear;
 
     @media (max-width: 600px) {
-      margin-left: 0px;
-      margin-right: 15px;
+        justify-content: left;
     }
 
-    &:hover {
-      transform: translateY(-1px);
-      border: 2px solid #fff;
-    }
+    .button {
+        display: inline-block;
+        vertical-align: middle;
+        text-decoration: none;
+        padding: 10px;
+        background-color: rgb(13, 13, 13);
+        border: 2px solid rgb(81, 81, 81);
+        border-radius: 5px;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        transition: all 0.1s linear;
+        margin-left: 15px;
 
-    &:active {
-      transform: translateY(0);
+        @media (max-width: 600px) {
+            margin-left: 0px;
+            margin-right: 15px;
+        }
+
+        &:hover {
+            transform: translateY(-1px);
+            border: 2px solid #fff;
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
     }
-  }
 }
 
 .hide {
-  visibility: hidden;
-  height: 0;
+    visibility: hidden;
+    height: 0;
 }

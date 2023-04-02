@@ -18,10 +18,8 @@ const Profile = () => {
     const nickname = useParams();
 
     const getData = () => {
-        if (myData.data) {
-            myData.data.nickname === nickname.id
-                ? dispatch(fetchAuthMe())
-                : dispatch(fetchUser(nickname.id));
+        if (myData.data?.nickname === nickname.id) {
+            return;
         } else {
             dispatch(fetchUser(nickname.id));
         }

@@ -1,0 +1,21 @@
+@import '../../App';
+
+.wrapper {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-top: 3px solid $BORDER_COLOR;
+
+    a {
+        text-decoration: none;
+        color: aliceblue;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .wrapper {
+        flex-direction: column;
+    }
+}

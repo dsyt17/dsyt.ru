@@ -8,6 +8,7 @@ import { useAppDispatch } from './hooks/useAppDispatch';
 import { useAppSelector } from './hooks/useAppSelector';
 import { initializeApp } from './redux/slices/appSlice';
 import { fetchAuthMe } from './redux/slices/auth';
+import Footer from './components/Footer/Footer.component';
 
 function App() {
     const dispatch = useAppDispatch();
@@ -33,7 +34,10 @@ function App() {
     return (
         <div className="App">
             <Navbar />
-            <AppRouter />
+            <div className="content">
+                <AppRouter />
+            </div>
+            <Footer />
         </div>
     );
 }

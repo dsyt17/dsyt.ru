@@ -1,5 +1,8 @@
-$FONT: 'Segoe UI', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+$FONT: 'Roboto', 'Open Sans', 'Montserrat', 'Segoe UI', sans-serif;
 $MAIN_BG_COLOR: rgb(44, 44, 44);
+$BORDER_COLOR: rgb(81, 81, 81);
 
 html {
     width: 100vw;
@@ -9,7 +12,7 @@ html {
 /* scrollbar */
 ::-webkit-scrollbar {
     width: 5px;
-    background: rgb(81, 81, 81);
+    background: $BORDER_COLOR;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -25,9 +28,38 @@ html {
 
 .App {
     font-family: $FONT;
+    font-weight: 400;
     margin: 0;
     padding: 0;
-    min-height: 100vh;
     background-color: $MAIN_BG_COLOR;
     color: #fff;
+}
+
+.content {
+    margin: 0 700px 0 700px;
+    min-height: 100vh;
+}
+
+@media screen and (max-width: 2200px) {
+    .content {
+        margin: 0 500px 0 500px;
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    .content {
+        margin: 0 300px 0 300px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .content {
+        margin: 0 100px 0px 100px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .content {
+        margin: 0 10px 0px 10px;
+    }
 }

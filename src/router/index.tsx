@@ -1,20 +1,24 @@
+import ErrorComponent from '../components/Errors/ErrorComponent/ErrorComponent';
 import About from '../pages/About/About';
-import Posts from '../pages/Posts/Posts';
-import Register from '../pages/Register/Register';
-import Login from '../pages/Login/Login';
-import Profile from '../pages/Profile/Profile';
 import AddPost from '../pages/AddPost/AddPost';
 import FullPost from '../pages/FullPost/FullPost';
-import Projects from '../pages/Projects/Projects';
-import Photos from '../pages/Projects/Photos/Photos';
+import Login from '../pages/Login/Login';
+import Posts from '../pages/Posts/Posts';
+import Profile from '../pages/Profile/Profile';
 import Converter from '../pages/Projects/Converter/Converter';
-import Users from '../pages/Projects/Users/Users.js';
-import Quiz from '../pages/Projects/Quiz/Quiz';
 import Modal from '../pages/Projects/Modal/Modal';
-import { Navigate } from 'react-router-dom';
-import ErrorComponent from '../components/Errors/ErrorComponent/ErrorComponent';
+import Photos from '../pages/Projects/Photos/Photos';
+import Projects from '../pages/Projects/Projects';
+import Quiz from '../pages/Projects/Quiz/Quiz';
+import Users from '../pages/Projects/Users/Users.js';
+import Register from '../pages/Register/Register';
 
-export const routes = [
+type RoutesType = {
+    path: string;
+    element: React.ReactNode;
+};
+
+export const routes: Array<RoutesType> = [
     { path: '/about', element: <About /> },
     { path: '/projects', element: <Projects /> },
     { path: '/login', element: <Login /> },

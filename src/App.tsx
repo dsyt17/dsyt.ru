@@ -3,14 +3,14 @@ import React from 'react';
 
 import AppLoader from './components/AppLoader/AppLoader.component';
 import AppRouter from './components/AppRouter';
+import Footer from './components/Footer/Footer.component';
 import Navbar from './components/Navbar/Navbar';
 import { useAppDispatch } from './hooks/useAppDispatch';
 import { useAppSelector } from './hooks/useAppSelector';
 import { initializeApp } from './redux/slices/appSlice';
 import { fetchAuthMe } from './redux/slices/auth';
-import Footer from './components/Footer/Footer.component';
 
-function App() {
+const App = () => {
     const dispatch = useAppDispatch();
 
     const initialized = useAppSelector(state => state.app.initialized);
@@ -40,6 +40,6 @@ function App() {
             <Footer />
         </div>
     );
-}
+};
 
 export default App;

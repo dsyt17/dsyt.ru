@@ -9,10 +9,12 @@ import { Navigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { fetchAuth, selectIsAuth } from '../../redux/slices/auth';
 import useDocumentTitle from '../../hooks/setDocumentTitle';
+import { useTranslation } from 'react-i18next';
 
 const Login = () => {
     const dispatch = useDispatch();
     const isAuth = useSelector(selectIsAuth);
+    const { t } = useTranslation();
 
     // форма для валидации
     const {
@@ -47,25 +49,25 @@ const Login = () => {
     return (
         <Paper classes={{ root: styles.root }}>
             <Typography classes={{ root: styles.title }} variant="h5">
-                Вход в аккаунт
+                {t('login.title')}
             </Typography>
             {/* отправляем данные */}
             <form onSubmit={handleSubmit(onSubmit)}>
                 <TextField
                     className={styles.field}
-                    label="E-Mail or login"
+                    label={t('login.fields.login.placeholder')}
                     error={Boolean(errors.loginOrEmail?.message)}
                     helperText={errors.loginOrEmail?.message}
                     // добавляем (регистрируем) поле в react-hook-form
-                    {...register('loginOrEmail', { required: 'Enter E-Mail or login!' })}
+                    {...register('loginOrEmail', { required: t('login.fields.login.required') })}
                     fullWidth
                 />
                 <TextField
                     className={styles.field}
-                    label="Password"
+                    label={t('login.fields.password.placeholder')}
                     error={Boolean(errors.password?.message)}
                     helperText={errors.password?.message}
-                    {...register('password', { required: 'Enter password!' })}
+                    {...register('password', { required: t('login.fields.password.required') })}
                     fullWidth
                 />
                 <Button
@@ -75,7 +77,7 @@ const Login = () => {
                     variant="contained"
                     fullWidth
                 >
-                    Войти
+                    {t('login.loginButton')}
                 </Button>
             </form>
         </Paper>

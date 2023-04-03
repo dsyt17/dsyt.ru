@@ -3,24 +3,27 @@ import { logout, selectIsAuth } from '../../redux/slices/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Navbar.module.scss';
 import { useNavigate } from 'react-router-dom';
-
-const links = {
-    main: [
-        { name: 'About', link: 'about' },
-        { name: 'My projects', link: 'projects' },
-        { name: 'Posts', link: 'posts' },
-    ],
-    guest: [
-        { name: 'Sign in', link: 'login' },
-        { name: 'Sign up', link: 'register' },
-    ],
-};
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
     const [active, setActive] = useState(2);
     const dispatch = useDispatch();
     const isAuth = useSelector(selectIsAuth);
     const userData = useSelector(state => state.auth.data);
+
+    const { t } = useTranslation();
+
+    const links = {
+        main: [
+            { name: t('navbar.about'), link: 'about' },
+            { name: t('navbar.myProjects'), link: 'projects' },
+            { name: t('navbar.posts'), link: 'posts' },
+        ],
+        guest: [
+            { name: t('navbar.signIn'), link: 'login' },
+            { name: t('navbar.signUp'), link: 'register' },
+        ],
+    };
 
     const logoutButton = () => {
         dispatch(logout());
@@ -100,7 +103,7 @@ const Navbar = () => {
                                     navToggle();
                                 }}
                             >
-                                Log Out
+                                {t('navbar.logOut')}
                             </li>
                         </>
                     ) : (

@@ -1,5 +1,4 @@
 import React from 'react';
-import { fetchAuthMe } from '../../redux/slices/auth';
 import { fetchUser } from '../../redux/slices/user';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Profile.module.scss';

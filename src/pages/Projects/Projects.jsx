@@ -36,7 +36,7 @@ const Projects = () => {
 
     return (
         <div className={styles.root}>
-            <h1>Нищие проекты</h1>
+            {/* <h1>Нищие проекты</h1>
             <div className={styles.projects}>
                 {projects.map((obj, index) => (
                     <Project
@@ -46,7 +46,7 @@ const Projects = () => {
                         key={index}
                     ></Project>
                 ))}
-            </div>
+            </div> */}
         </div>
     );
 };

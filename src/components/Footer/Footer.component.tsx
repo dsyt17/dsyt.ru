@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useTranslation } from 'react-i18next';
+
 import styles from './Footer.module.scss';
 
 type Links = {
@@ -14,13 +16,21 @@ const links: Array<Links> = [
 ];
 
 const Footer = () => {
+    const { i18n } = useTranslation();
+
+    const changeLanguage = (lang: string) => {
+        i18n.changeLanguage(lang);
+    };
+
     return (
         <div className={styles.wrapper}>
             {links.map(item => (
-                <a href={item.link} target="_blank" rel="noreferrer">
+                <a key={item.label} href={item.link} target="_blank" rel="noreferrer">
                     {item.label}
                 </a>
             ))}
+            <div onClick={() => changeLanguage('ru')}>Ru</div>
+            <div onClick={() => changeLanguage('en')}>En</div>
         </div>
     );
 };

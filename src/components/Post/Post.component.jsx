@@ -6,12 +6,12 @@ import EditIcon from '@mui/icons-material/Edit';
 import EyeIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 
 import styles from './Post.module.scss';
-import { UserInfo } from '../UserInfo';
 import { PostSkeleton } from './Skeleton';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { fetchRemovePost } from '../../redux/slices/posts';
+import { fetchRemovePost } from '../../redux/slices/postsSlice';
 import { baseURL } from '../../axios';
+import { UserInfo } from '../UserInfo/UserInfo.component';
 
 export const Post = ({
     _id,

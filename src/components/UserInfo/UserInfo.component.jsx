@@ -4,8 +4,6 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 import { Link } from 'react-router-dom';
 
 export const UserInfo = ({ avatarUrl, nickname, additionalText, login, verifed }) => {
-    // пока так...
-
     return (
         <div className={styles.root}>
             <img

@@ -7,8 +7,8 @@ import styles from './Login.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { fetchAuth, selectIsAuth } from '../../redux/slices/auth';
-import useDocumentTitle from '../../hooks/setDocumentTitle';
+import { fetchAuth, selectIsAuth } from '../../redux/slices/authSlice';
+import useDocumentTitle from '../../hooks/useDocumentTitle';
 import { useTranslation } from 'react-i18next';
 
 const Login = () => {

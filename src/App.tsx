@@ -8,7 +8,7 @@ import Navbar from './components/Navbar/Navbar';
 import { useAppDispatch } from './hooks/useAppDispatch';
 import { useAppSelector } from './hooks/useAppSelector';
 import { initializeApp } from './redux/slices/appSlice';
-import { fetchAuthMe } from './redux/slices/auth';
+import { fetchAuthMe } from './redux/slices/authSlice';
 
 const App = () => {
     const dispatch = useAppDispatch();

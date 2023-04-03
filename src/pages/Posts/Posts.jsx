@@ -1,11 +1,11 @@
 /* eslint-disable prettier/prettier */
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPosts } from '../../redux/slices/posts';
-import { Post } from '../../components/Post';
+import { fetchPosts } from '../../redux/slices/postsSlice';
+import { Post } from '../../components/Post/Post.component';
 import styles from './Posts.module.scss';
 import { useEffect, useState } from 'react';
-import useDocumentTitle from '../../hooks/setDocumentTitle';
+import useDocumentTitle from '../../hooks/useDocumentTitle';
 import LoadingPostError from '../../components/Errors/LoadingPostError/LoadingPostError';
 import { useTranslation } from 'react-i18next';
 

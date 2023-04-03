@@ -1,7 +1,8 @@
 import React from 'react';
-import Project from '../../components/Project/Project';
-import useDocumentTitle from '../../hooks/setDocumentTitle';
+
 import styles from './Projects.module.scss';
+import Project from '../../components/Project/Project';
+import useDocumentTitle from '../../hooks/useDocumentTitle';
 
 const projects = [
     {

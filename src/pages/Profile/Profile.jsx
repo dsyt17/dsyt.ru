@@ -1,12 +1,12 @@
 import React from 'react';
-import { fetchUser } from '../../redux/slices/user';
+import { fetchUser } from '../../redux/slices/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Profile.module.scss';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import { getDate } from '../../utils/dateTime';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import useDocumentTitle from '../../hooks/setDocumentTitle';
+import useDocumentTitle from '../../hooks/useDocumentTitle';
 
 const Profile = () => {
     const dispatch = useDispatch();

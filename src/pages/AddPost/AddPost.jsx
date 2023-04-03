@@ -1,10 +1,11 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import TextField from '@mui/material/TextField';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import SimpleMDE from 'react-simplemde-editor';
 import { useSelector } from 'react-redux';
-import { selectIsAuth } from '../../redux/slices/auth';
+import { selectIsAuth } from '../../redux/slices/authSlice';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import axios, { baseURL } from '../../axios';
 import 'easymde/dist/easymde.min.css';
@@ -55,18 +56,18 @@ const AddPost = () => {
 
             const fields = imageUrl
                 ? {
-                      title,
-                      // imageUrl: `${baseURL}${imageUrl}`,
-                      imageUrl,
-                      tags: tags.split(','),
-                      text,
-                  }
+                    title,
+                    // imageUrl: `${baseURL}${imageUrl}`,
+                    imageUrl,
+                    tags: tags.split(','),
+                    text,
+                }
                 : // если без картинки
-                  {
-                      title,
-                      tags: tags.split(','),
-                      text,
-                  };
+                {
+                    title,
+                    tags: tags.split(','),
+                    text,
+                };
 
             const { data } = isEditing
                 ? await axios.patch(`/posts/${id}`, fields)

@@ -1,9 +1,9 @@
 import React from 'react';
-import Stack from '@mui/material/Stack';
+
 import Skeleton from '@mui/material/Skeleton';
+import Stack from '@mui/material/Stack';
 
 import styles from './Post.module.scss';
-import root from '../../pages/Posts/Posts.module.scss';
 
 export const PostSkeleton = () => {
     return (

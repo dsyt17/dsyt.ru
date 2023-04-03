@@ -1,8 +1,16 @@
 import React from 'react';
+
 import { useNavigate } from 'react-router-dom';
+
 import styles from './Project.module.scss';
 
-const Project = ({ name, tech, description }) => {
+type ProjectPropsType = {
+    name: string;
+    tech: string;
+    description: string;
+};
+
+const Project: React.FC<ProjectPropsType> = ({ name, tech, description }) => {
     const router = useNavigate();
 
     return (

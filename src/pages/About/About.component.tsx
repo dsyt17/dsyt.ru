@@ -1,6 +1,7 @@
 import React from 'react';
-import useDocumentTitle from '../../hooks/setDocumentTitle';
+
 import styles from './About.module.scss';
+import useDocumentTitle from '../../hooks/useDocumentTitle';
 
 const About = () => {
     useDocumentTitle('About');

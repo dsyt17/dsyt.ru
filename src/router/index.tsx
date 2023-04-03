@@ -1,5 +1,5 @@
 import ErrorComponent from '../components/Errors/ErrorComponent/ErrorComponent';
-import About from '../pages/About/About';
+import About from '../pages/About/About.component';
 import AddPost from '../pages/AddPost/AddPost';
 import FullPost from '../pages/FullPost/FullPost';
 import Login from '../pages/Login/Login';
@@ -8,7 +8,7 @@ import Profile from '../pages/Profile/Profile';
 import Converter from '../pages/Projects/Converter/Converter';
 import Modal from '../pages/Projects/Modal/Modal';
 import Photos from '../pages/Projects/Photos/Photos';
-import Projects from '../pages/Projects/Projects';
+import Projects from '../pages/Projects/Projects.component';
 import Quiz from '../pages/Projects/Quiz/Quiz';
 import Users from '../pages/Projects/Users/Users.js';
 import Register from '../pages/Register/Register';

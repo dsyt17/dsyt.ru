@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { logout, selectIsAuth } from '../../redux/slices/auth';
+import { logout, selectIsAuth } from '../../redux/slices/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Navbar.module.scss';
 import { useNavigate } from 'react-router-dom';

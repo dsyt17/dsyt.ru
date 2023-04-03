@@ -2,7 +2,7 @@ import React from 'react';
 import ReactMarcdown from 'react-markdown';
 import styles from './FullPost.module.scss';
 
-import { Post } from '../../components/Post';
+import { Post } from '../../components/Post/Post.component';
 import { useParams } from 'react-router-dom';
 import axios from '../../axios';
 import { getDateAndTime } from '../../utils/dateTime';
